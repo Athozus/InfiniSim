@@ -546,14 +546,14 @@ int command_settings(const std::string &program_name, const std::vector<std::str
     std::cout << "ClockFace: " << static_cast<int>(clockface) << " " << clockface_str << std::endl;
   }
   {
-    auto chimes = settingsController.GetChimeOption();
-    auto chimes_str = [](auto val) {
-      if (val == Settings::ChimesOption::None) return "None";
-      if (val == Settings::ChimesOption::Hours) return "Hours";
-      if (val == Settings::ChimesOption::HalfHours) return "HalfHours";
+    auto chimesFrequency = settingsController.GetChimeFrequencyOption();
+    auto chimesFrequency_str = [](auto val) {
+      if (val == Settings::ChimesFrequencyOption::None) return "None";
+      if (val == Settings::ChimesFrequencyOption::Hours) return "Hours";
+      if (val == Settings::ChimesFrequencyOption::HalfHours) return "HalfHours";
       return "unknown";
-    }(chimes);
-    std::cout << "Chimes: " << static_cast<int>(chimes) << " " << chimes_str << std::endl;
+    }(chimesFrequency);
+    std::cout << "Chimes: " << static_cast<int>(chimesFrequency) << " " << chimesFrequency_str << std::endl;
   }
   auto color_str = [](auto c) {
     if (c == Settings::Colors::White) return "White";
